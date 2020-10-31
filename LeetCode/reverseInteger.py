@@ -37,12 +37,18 @@ def reverse(x):
     :type x: int
     :rtype: int
     """
+
+
     new_str = str(x)
-
+    i = 1
     rev_str = new_str[::-1]
+    if rev_str[-1] == "-":
+        rev_str = rev_str.strip("-")
+        i = -1
+    return (int(rev_str)) * i
 
-    return int(rev_str)
+
 
 print(reverse(12345))
-print(reverse(54321))
+print(reverse(-54321))
 print(reverse(852))
