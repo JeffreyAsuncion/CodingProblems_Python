@@ -45,6 +45,8 @@ def reverse(x):
     if rev_str[-1] == "-":
         rev_str = rev_str.strip("-")
         i = -1
+    if (int(rev_str)>=2**31):
+        return 0
     return (int(rev_str)) * i
 
 
