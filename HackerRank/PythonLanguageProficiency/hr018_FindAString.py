@@ -46,10 +46,14 @@ def count_substring(string, sub_string):
     length = len(string)
     sub_length = len(sub_string)
     i, count = 0, 0
-    for i in range(length):
-        if string[i:i+3] == sub_string:
-            #print(string[i:i+3], sub_string)
+    
+    for i in range(0,length):
+        #print("in the loop")
+        #print(string[i:i+sub_length], sub_string)
+        if string[i:i+sub_length] == sub_string:
+            
             count +=1
+    
     return count
 
 if __name__ == '__main__':
