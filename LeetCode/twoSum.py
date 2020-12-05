@@ -32,18 +32,16 @@ Constraints:
 Only one valid answer exists.
 """
 
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # iterate thru nums
         i = 0
-        
         for i in range(len(nums)):
             j = 1
+            # iterate thru nums
             for j in range(len(nums)):
-                if nums[i] + nums[j] == target:
+                # compare the sum
+                # make sure not the same index
+                if nums[i] + nums[j] == target and i != j:
+                    #return index of i and j
                     return [i, j]
