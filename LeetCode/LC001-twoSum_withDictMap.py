@@ -40,18 +40,21 @@ target2 = 12
 
 
 def twoSum(nums, target):
-
+    # create a dictionary to hold the values
     values = dict()
 
+    # iterate thru nums
     for index, element in enumerate(nums):
         
         comp = target - element
 
+        # check to see if comp is in the dictionary
         if comp in values:
-
+            # return index of comp and index
             return[values[comp], index]
+        # add the element to dictionary
         values[element] = index
-    
+    # return empty list
     return []
 
 print(twoSum(arr1, target1))
