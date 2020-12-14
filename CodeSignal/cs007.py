@@ -32,11 +32,42 @@ Return true if it is possible to remove one element from the array in order to g
 
 
 def almostIncreasingSequence(sequence):
-    counter = 0
-    for i in range(len(sequence)-1):
-        if sequence[i] >= sequence[i + 1]:
-            counter += 1
-    return counter == 1
+    # set preNum before
+    preNum = -999999999
+
+    for i in range(len(sequence)):
+        # current num in loop
+        num = sequence[i]
+
+        # opposite of num > preNum
+        if not num > preNum:
+            index = i
+            # This and next
+            seq1 = sequence[:index] + sequence[index + 1:]
+            # next and next-after
+            seq2 = sequence[:index+1] + sequence[index + 1 + 1:]
+            # before and this
+            seq3 = sequence[:index-1] + sequence[index + 1 - 1:]
+            
+            # use helper function to compare sliding window
+            if isIncreaseSequence(seq1) or isIncreaseSequence(seq2) or isIncreaseSequence(seq3):
+                return True
+        # set preNum to current num for next loop
+        preNum = num
+
+    return False
+            
+
+def isIncreaseSequence(sequence):
+    # set a preNum to a very small num
+    preNum = -999999999
+
+    for num in sequence:
+        if not num > preNum:
+            return False
+        preNum = num
+    return True
+
    
 
 
