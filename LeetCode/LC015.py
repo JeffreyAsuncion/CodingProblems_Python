@@ -19,7 +19,6 @@ Output: []
 def threeSum(nums):
     # results list
     results = []
-    
     # sort list in ascending order
     nums.sort()
     # find the length of the list
@@ -27,7 +26,6 @@ def threeSum(nums):
     
     # loop thru the list
     for i in range(length-2):  # -2 to account for the two pointers Left and Right
-        
         # must not contain duplicate triplets
         if i > 0 and nums[i] == nums[i-1]:
             # just keep going
@@ -50,16 +48,11 @@ def threeSum(nums):
                 # append all three values to the results
                 results.append([nums[i],nums[Left],nums[Right]])
                 print("Got it!")
-
-                #
-                # Figure out this part 
-                #
-
-
-                # check if Left and Right are repeating
+                # This is a check to make sure that the Left and Right are not part of a Triplet
+                # check if Left and Left+1 are not part of a Triplet
                 while Left < Right and nums[Left] == nums[Left+1]:
                     Left = Left + 1 
-                # check if Left and Right repeating
+                # check if Right and Right-1 are not part of a Triplet
                 while Left < Right and nums[Right] == nums[Right -1]:
                     Right = Right -1
                 # otherwise
@@ -67,6 +60,8 @@ def threeSum(nums):
                 Right = Right -1
             # i += 1
     return results
+
+
 
 # Input: 
 nums = [-1,0,1,2,-1,-4]

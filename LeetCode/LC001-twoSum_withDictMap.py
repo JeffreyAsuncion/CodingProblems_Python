@@ -39,6 +39,32 @@ arr2 = [4, 7, 2, 8]
 target2 = 12
 
 
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+#         # holder to check for complements
+#         dict = {}
+        
+#         # loop thru the nums
+#         for i, elem in enumerate(nums):
+#             # calculate the complement 
+#             comp = target - elem
+            
+#             # check if the complement is in the dict
+#             if comp in dict:
+#                 # return index of the comp and the index of i
+#                 return [dict[comp], i]
+#             else:
+#                 # otherwise add this elem to the dict
+                
+#                 dict[elem] = i
+        
+#         # if none found in loop
+#         # return empty list
+#         return []
+
+
+
 def twoSum(nums, target):
     # create a dictionary to hold the values
     values = dict()
