@@ -44,7 +44,6 @@ def allUnique(s, start, end):
         return True
 
 
-
 def lengthOfLongestSubstring(s: str) -> int:
     # base case where s is empty string
     if s == "":
