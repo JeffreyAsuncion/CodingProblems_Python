@@ -52,7 +52,7 @@ class Solution:
         val = l1.val + l2.val + c
         # calculate the next c Carry for the next recursion call
         c = val // 10
-
+        # this makes sure that you only get the ones column
         ret = ListNode(val % 10 ) 
         
         if (l1.next != None or l2.next != None or c != 0):
