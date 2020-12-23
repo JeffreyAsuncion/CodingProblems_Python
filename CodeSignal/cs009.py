@@ -27,12 +27,15 @@ Array of the longest strings, stored in the same order as in the inputArray.
 def allLongestStrings(inputArray):
     max_length = 0
     resultStr = []
+
     for i in range(len(inputArray)):
         if len(inputArray[i]) >= max_length:
             max_length = len(inputArray[i])
+    
     for i in range(len(inputArray)):
         if len(inputArray[i]) == max_length:        
             resultStr.append(inputArray[i])
+    
     return resultStr
 
 
