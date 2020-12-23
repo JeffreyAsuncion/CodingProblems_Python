@@ -17,17 +17,17 @@ Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
 """
 
 def reverseInParentheses(inputString):
-    for index, elem in enumerate(inputString):
-        if elem == '(':
-            start = index
-        if elem == ')':
-            end = index
-    results = inputString[start:end + 1]
-    front = inputString[:start]
-    end = inputString[end+1:]
-    mid = results.strip('(').strip(')')
-    results = front + mid[::-1] + end
-    return results
+    char = list(inputString)
+    open_bracket = []
+    
+    for i, c in enumerate(inputString):
+        if c == '(':
+            open_bracket.append(i)
+        elif c == ')':
+            j = open_bracket.pop()
+            char[j:i] = char[i:j:-1]
+            
+    return ''.join(c for c in char if c not in '()')
 
 
 
