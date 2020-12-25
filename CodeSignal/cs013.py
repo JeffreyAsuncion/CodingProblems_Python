@@ -18,6 +18,8 @@ Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
 
 def reverseInParentheses(inputString):
     char = list(inputString)
+    
+    #stack
     open_bracket = []
     
     for i, c in enumerate(inputString):
@@ -26,7 +28,8 @@ def reverseInParentheses(inputString):
         elif c == ')':
             j = open_bracket.pop()
             char[j:i] = char[i:j:-1]
-            
+
+    # review this stuff        
     return ''.join(c for c in char if c not in '()')
 
 
