@@ -33,21 +33,31 @@ true is the sequence is regular and false otherwise.
 #       b.  Else, return False
 
 def validParenthesesSequence(s):
+    # stack to hold the values we see
     stack = []
+    # a hash map to help us match the valid parentheses
     mapping = {")": "("}
 
+    # loop thru the input string
     for char in s:
 
+        # check if the char is in the mapping
         if char in mapping:
-
+            # if stack is still full
             if stack:
+                # pop last element off stack
                 top_elem = stack.pop()
+            # otherwise stack is empty
             else:
+                # pass a filler to check map
                 top_elem = "#" # note this could be any symbol not a  bracket or parens
             
+            # check if element popped matches
             if mapping[char] != top_elem:
                 return False
+        # otherwise not in map
         else:
+            # adding to stack
             stack.append(char)
     
     return not stack # if the stack it empty, then it is even AND PARENS are Valid
