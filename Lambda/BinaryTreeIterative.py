@@ -26,7 +26,7 @@ class BinaryTreeNode:
         stack = []
 
         # base case
-        if root is not None:
+        if root is not None: # or if root:
             stack.append((1, root))
             print("1st append")
 
@@ -34,20 +34,23 @@ class BinaryTreeNode:
         depth = 0
         
         # while our stack is not empty?
-        while stack != []:
+        while stack != []: # or while stack:
             # pop the stack to the current depth and the current root node
-            current_depth, root = stack.pop()
-            print("pop")
+            current_depth, root = stack.pop() # pop the stack and see if it refills
+            print(f"pop {current_depth}")
             # if our root node is not none
-            if root is not None:
+            if root is not None: # if root:
                 # set the depth to the max of depth and current depth
                 depth = max(depth, current_depth)
                 print(depth)
+
+                # this is where it INCREMENT
                 # append the current depth + 1 and the root left to the stack 
                 stack.append((current_depth + 1, root.left))
                 # append the current depth + 1 and the root right to the stack 
                 stack.append((current_depth + 1, root.right))
-                print("loop append")
+                print("LOOP")
+                
         # return the depth
         return depth
 
