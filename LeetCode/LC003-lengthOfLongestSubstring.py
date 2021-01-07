@@ -34,15 +34,26 @@ def lengthOfLongestSubstring(s: str) -> int:
     if len(s) == 0:
         return 0
 
+    # map datastructure
     map = {}
-    max_length = start = 0
+    max_length = 0
+    start = 0
 
+    # iterate thru string
     for i in range(len(s)):
+        # check if s[i] in map and if the start point is LTE s[i] index
         if s[i] in map and start <= map[s[i]]:
+            # increment the start point
             start = map[s[i]] + 1
+        # otherwise check the length 
         else:
+            # return the larger length
             max_length = max(max_length, i - start + 1)
+        
+        # add to the map    
         map[s[i]] = i
+        
+    # return result
     return max_length
 
 
