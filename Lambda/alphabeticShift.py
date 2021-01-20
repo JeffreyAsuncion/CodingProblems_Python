@@ -39,5 +39,6 @@ def alphabeticShift(inputString):
     return new_str
 
 
+
 inputString = "crazy" 
 print(alphabeticShift(inputString)) # = "dsbaz".
