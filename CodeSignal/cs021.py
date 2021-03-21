@@ -19,22 +19,25 @@ isIPv4Address(inputString) = false.
 There is no first number.
 """
 
+import re
+
 def isIPv4Address(inputString):
-    if inputString[0] == '.' or inputString[-1] == '.' or len(inputString) < 4:
-        return False
-
-    new_str = inputString.split('.')
     
-    checkNotNumber = [num for num in new_str]
-    for num in checkNotNumber:
-        if not num.isnumeric() :
-            return False    
-
-    new_str = [int(num) for num in new_str]
-    for num in new_str:
-        if num >= 0 or num <= 255:
-            return True
-    return False
+        
+    
+    # Make a regular expression
+    # for validating an Ip-address
+    regex = "^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])$"
+ 
+ 
+     
+    # pass the regular expression
+    # and the string in search() method
+    if(re.search(regex, inputString)): 
+        return True
+         
+    else: 
+        return False
 
 
 inputString = "172.16.254.1"
