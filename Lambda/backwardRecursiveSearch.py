@@ -29,6 +29,8 @@ def rec_search(items, target):
     # from the beginning of list to all but the last one
     # passing on the target
     print("LOL")
+    # this pops last element off `items`
+    # and trims down the item list
     return rec_search(items[:-1], target)
 
 
