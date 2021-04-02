@@ -56,6 +56,7 @@ print(csBinarySearch(nums, target))
 # Output: 4
 #Explanation: 9 exists in nums and its index is 4
 
+
 nums = [-1,0,3,5,9,12]
 target = 2
 print(csBinarySearch(nums, target)) 
