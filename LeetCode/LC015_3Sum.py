@@ -28,8 +28,10 @@ def threeSum(nums):
     for i in range(length-2):  # -2 to account for the two pointers Left and Right
         # must not contain duplicate triplets
         if i > 0 and nums[i] == nums[i-1]:
-            # just keep going
+            # continue to next loop, ie i++
             continue
+        #else
+
         Left = i + 1
         Right = length - 1
         
@@ -50,14 +52,14 @@ def threeSum(nums):
                 print("Got it!")
                 # This is a check to make sure that the Left and Right are not part of a Triplet
                 # check if Left and Left+1 are not part of a Triplet
-                while Left < Right and nums[Left] == nums[Left+1]:
+                while Left < Right and nums[Left] == nums[Left + 1]:
                     Left = Left + 1 
                 # check if Right and Right-1 are not part of a Triplet
-                while Left < Right and nums[Right] == nums[Right -1]:
-                    Right = Right -1
+                while Left < Right and nums[Right] == nums[Right - 1]:
+                    Right = Right - 1
                 # otherwise
                 Left = Left + 1
-                Right = Right -1
+                Right = Right - 1
             # i += 1
     return results
 

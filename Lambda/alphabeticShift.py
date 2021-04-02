@@ -24,20 +24,21 @@ Guaranteed constraints:
 The resulting string after replacing each of its characters.
 """
 
+
 def alphabeticShift(inputString):
-    abc = "abcdefghijklmnopqrstuvwxyz"
+    abc= "abcdefghijklmnopqrstuvwxyz"
     new_str = ""
+
     for letter in inputString:
         i = abc.index(letter)
-
+        # increment to next letter
         x = i + 1
+        # abc 0 - 25
         if x == 26:
             x = 0
         new_letter = abc[x]
         new_str += new_letter
-    
     return new_str
-
 
 
 inputString = "crazy" 
