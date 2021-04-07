@@ -35,6 +35,7 @@ def matrixElementsSum(matrix):
                 map.append(j)
             if j not in map:
                 total += matrix[i][j]
+    return total
     
 
-matrixElementsSum(matrix)
+print(matrixElementsSum(matrix))
