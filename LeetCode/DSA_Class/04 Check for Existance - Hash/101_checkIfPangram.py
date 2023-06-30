@@ -20,9 +20,16 @@ Input: sentence = "leetcode"
 Output: false
 """
 
-def checkIfPangram(sentence):
+def checkIfPangram(sentence):    
+    dict_letter = {}
+    # print(len(sentence))
+    for i in range(len(sentence)):
+        if sentence[i] in dict_letter:
+            dict_letter[sentence[i]] += 1
+        else:
+            dict_letter[sentence[i]] = 1
     
-
+    return len(dict_letter) == 26
 
 sentence = "thequickbrownfoxjumpsoverthelazydog"
 # Output: true
