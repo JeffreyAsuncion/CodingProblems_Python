@@ -33,6 +33,7 @@ def checkIfPangram(sentence):
 
 sentence = "thequickbrownfoxjumpsoverthelazydog"
 # Output: true
-
+print(checkIfPangram(sentence))
 sentence = "leetcode"
 # Output: false
+print(checkIfPangram(sentence))
